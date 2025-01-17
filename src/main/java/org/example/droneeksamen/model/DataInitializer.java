@@ -20,14 +20,14 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        // Initialize 3 stations close to Copenhagen
+
         if (stationRepository.count() < 3) {
-            stationRepository.save(new Station(55.41, 12.34)); // Centrum af København
-            stationRepository.save(new Station(55.42, 12.35)); // 1 km væk
-            stationRepository.save(new Station(55.39, 12.32)); // 1 km væk
+            stationRepository.save(new Station(55.41, 12.34));
+            stationRepository.save(new Station(55.42, 12.35));
+            stationRepository.save(new Station(55.39, 12.32));
         }
 
-        // Initialize 5 pizzas
+
         if (pizzaRepository.count() < 5) {
             pizzaRepository.save(new Pizza("Margherita", 90));
             pizzaRepository.save(new Pizza("Peperoni", 100));

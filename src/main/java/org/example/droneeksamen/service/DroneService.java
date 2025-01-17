@@ -39,11 +39,11 @@ public class DroneService {
 
         Station selectedStation = stations.stream()
                 .min((s1, s2) -> {
-                    long count1 = droneRepository.findByStation(s1).size(); // Get the count of drones in station s1
-                    long count2 = droneRepository.findByStation(s2).size(); // Get the count of drones in station s2
-                    return Long.compare(count1, count2); // Compare the counts
+                    long count1 = droneRepository.findByStation(s1).size();
+                    long count2 = droneRepository.findByStation(s2).size();
+                    return Long.compare(count1, count2);
                 })
-                .orElseThrow(); // In case no station is found, throw an exception
+                .orElseThrow();
 
         Drone newDrone = new Drone();
         newDrone.setSerialUuid(UUID.randomUUID().toString());

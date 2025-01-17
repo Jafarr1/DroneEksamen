@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin (origins ="*")
 @RestController
 @RequestMapping("/drones")
 public class DroneController {
@@ -30,6 +31,8 @@ public class DroneController {
         }
     }
 
+
+    // FOR AT ÆNDRE DRONE STATUS POST /drones/disable?serialUuid=Uuid nummeret
     @PostMapping("/enable")
     public ResponseEntity<String> enableDrone(@RequestParam String serialUuid) {
         return changeDroneStatus(serialUuid, "i drift", "enabled");
